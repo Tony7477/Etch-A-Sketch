@@ -1,19 +1,31 @@
 let container=document.querySelector('.container');
-for(let i=0;i<16*16;i++){
-    let block = document.createElement('div');
-    block.classList.add('block');
-    block.style.cssText ='border: 1px solid black; padding:10px; width:10px;';
-    container.appendChild(block);
-}
-let blocks=document.querySelectorAll('.block');
+let button=document.querySelector('button');
+button.addEventListener('click',()=>{
+    container.innerHTML="";
+
+let size=prompt("please let me know what type of grid size do you want");
+container.style.setProperty('--rows',size);
+    for(let i=0;i<parseInt(size)*parseInt(size);i++){
+
+        let block = document.createElement('div');
+        block.classList.add('block');
+        block.style.cssText ='border: 1px solid black; padding:7px; ';
+        container.appendChild(block);
+    }
+    let blocks=document.querySelectorAll('.block');
+console.log(blocks);
 
 blocks.forEach((block)=>{
-    block.addEventListener('mouseover',(e)=>{
+    block.addEventListener('mouseover',()=>{
     
-block.style.cssText ='background:black;border: 1px solid black; padding:10px; width:10px;';
+block.style.cssText ='background:black;border: 1px solid black; padding:7px';
 
      });
 
 });
-container.style.cssText='display:grid;   grid-template-columns: repeat(16,0fr);'
+
+
+});
+
+
 

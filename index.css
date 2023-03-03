@@ -1,0 +1,14 @@
+:root{
+    --rows:2;
+}
+.con{
+    display:flex;
+}
+.container{
+    justify-content: center;
+    
+    width:960px;
+    display: grid;
+    grid-template-columns: repeat(var(--rows), 0fr);
+    
+}
